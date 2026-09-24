@@ -7,10 +7,10 @@ var session=require('express-session');
 const fileUpload=require('express-fileupload');
 
 var conn=mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'root',
-    database:'simone'
+    host:'bwpgvegynxynugdmkhi5-mysql.services.clever-cloud.com',
+    user:'uhpw8jark84csxpu',
+    password:'lmELqdMiV1s7tUjFr9C1',
+    database:'bwpgvegynxynugdmkhi5'
 });
 
 var exe=util.promisify(conn.query).bind(conn);
