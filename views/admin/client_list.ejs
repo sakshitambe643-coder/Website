@@ -1,0 +1,47 @@
+<%-include('header.ejs');%>
+
+      <div class="main">
+        <header class="topbar">
+          <h2>Users table</h2>
+          <div class="user">Welcome, Admin</div>
+        </header>
+        <section class="content">
+          <div class="panel">
+            <h3>All clients</h3>
+            <p class="hint">Sample rows for layout only.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Msg</th>
+                  <th>Photo</th>
+                  <th>Name</th>
+                  <th>Position</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i=0;i<client.length;i++){ %>
+                 <tr>
+                  <td><%= i+1 %></td>
+                <td><%= client[i].c_msg %></td>
+                  <td>
+                    <img src="/image/<%=client[i].c_photo %>" height="100px"/>
+                </td>
+                  <td><%= client[i].c_name%></td>
+                  <td><%= client[i].c_position%></td>
+                <td>
+                  <a href="/admin/client_delete/<%=client[i].cid%>"><span class="badge badge-ok">Delete</span></a>
+                  <a href="/admin/edit/<%=client[i].cid%>"  ><span class="badge badge-ok">Edit</span>
+</a>
+                </td>
+                </tr>
+                <% } %>
+                  
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+<%-include('footer.ejs');%>

@@ -1,0 +1,42 @@
+<%-include('header.ejs');%>
+
+      <div class="main">
+        <header class="topbar">
+          <h2>Add client record</h2>
+          <div class="user">Welcome, Admin</div>
+        </header>
+        <section class="content">
+          <div class="panel">
+            <h3>Clients form</h3>
+            <p class="hint">Static template only. Submit stays on this page.</p>
+            <form class="form" action="/admin/client_save" method="post" enctype="multipart/form-data">
+              <div class="row">
+                 <div class="field">
+                  <label for="text">client msg</label>
+                  <input type="text"name="c_msg" placeholder="msg..." />
+                </div>
+              </div>
+                <div class="field">
+                  <label for="img">client photo</label>
+                  <input  type="file" name="c_photo" />
+                </div>
+                <div class="field">
+                  <label for="text">client name</label>
+                  <input id="text" type="text"name="c_name" placeholder="name..." />
+                </div>
+              
+              <div class="field">
+                <label for="text">client position</label>
+                <input id="position" type="text" name="c_position "/>
+              </div>
+            
+              <div class="actions">
+                <button class="btn" type="submit">Save</button>
+                <button class="btn btn-ghost" type="reset">Clear</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+    <%-include('footer.ejs');%>

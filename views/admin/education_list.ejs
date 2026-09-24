@@ -1,0 +1,46 @@
+<%-include('header.ejs');%>
+
+      <div class="main">
+        <header class="topbar">
+          <h2>Users table</h2>
+          <div class="user">Welcome, Admin</div>
+        </header>
+
+        <section class="content">
+          <div class="panel">
+            <h3>All users</h3>
+            <p class="hint">All education records.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>year</th>
+                  <th>Degree</th>
+                  <th>University</th>
+                  <th>Descripton</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i=0;i<education.length;i++){ %>
+                 <tr>
+                  <td><%= i+1 %></td>
+                  <td><%= education[i].e_year%></td>
+                  <td><%= education[i].e_degree%></td>
+                  <td><%= education[i].e_university%></td>
+                  <td><%= education[i].e_desc%></td>
+                <td>
+                  <a href="/admin/delete/<%=education[i].eid%>"><span class="badge badge-ok">Delete</span></a>
+                  <a href="/admin/edit/<%=education[i].eid%>"  ><span class="badge badge-ok">Edit</span>
+</a>
+                </td>
+                </tr>
+                <% } %>
+                  
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+<%-include('footer.ejs');%>

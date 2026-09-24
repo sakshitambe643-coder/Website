@@ -1,0 +1,64 @@
+<%-include('header.ejs');%>
+
+      <div class="main">
+        <header class="topbar">
+          <h2>update About</h2>
+          <div class="user">Welcome, Admin</div>
+        </header>
+        <section class="content">
+          <div class="panel">
+            <h3>About form</h3>
+            <p class="hint">Static template only. Submit stays on this page.</p>
+            <form class="form" action="/admin/about_update_save/<%= data.aid %>" method="post" enctype="multipart/form-data">
+              <div class="row">   
+                <div class="field">
+                  <label for="text">About title</label>
+                  <input id="text" type="text"name="a_title" value="<%= data.a_title %>" placeholder="title..." />
+                </div>
+                 <div class="field">
+                <label for="notes">Description</label>
+                <textarea id="notes"name="a_desc" placeholder="Short note..."><%= data.a_desc %></textarea>
+              </div>
+                <div class="field">
+                  <label for="text">Name</label>
+                  <input id="text" type="text"name="a_name" value="<%= data.a_name %>" placeholder="name..." />
+                </div>
+                <div class="field">
+                  <label for="text">Email</label>
+                  <input id="email" type="email"name="a_email" value="<%= data.a_email %>" placeholder="email..." />
+                </div>
+              </div>
+              <div class="field">
+                <label for="notes"> Age</label>
+                <input name="a_age" value="<%= data.a_age %>" />
+              </div>
+               <div class="field">
+                <label for="notes"> Address</label>
+                <input name="a_address" placeholder="address..."  value="<%= data.a_address %>"/>
+              </div>
+               <div class="field">
+                <label for="notes"> Count Title1</label>
+                <input name="a_title1" value="<%= data.a_title1 %>" />
+              </div>
+               <div class="field">
+                <label for="notes"> Count Title2</label>
+                <input  name="a_title2" value="<%= data.a_title2 %>" />
+              </div>
+              <div class="field">
+                <label for="notes"> Count Title3</label>
+                <input  name="a_title3" value="<%= data.a_title3 %>" />
+              </div>
+              <div class="field">
+                <label for="notes"> Count Title4</label>
+                <input  name="a_title4" value="<%= data.a_title4 %>" />
+              </div>
+              <div class="actions">
+                <button class="btn" type="submit">Update</button>
+                <button class="btn btn-ghost" type="reset">Clear</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    
+    <%-include('footer.ejs');%>
